@@ -1,0 +1,147 @@
+*{
+    padding: 0px;
+    margin:0px;
+    
+}
+body{
+    background-color: #0c0f18;
+    color:#ffffff;
+    --main-font:'Amaranth', sans-serif;
+    --secondary-font:'Open Sans', sans-serif;
+    font-family: var(--secondary-font);
+}
+
+header{
+    box-sizing: border-box;
+    background:linear-gradient(to top, #00000071, #0e63c4), url(images/india-dormida.jpg);
+    background-size: 100%;
+    background-repeat: none;
+    width: 100%;
+    height: 100vh;
+    display: flex;   
+    align-items: flex-end;
+}
+.header-container{
+    width: 100%;
+    padding:0px 10%;
+    margin-bottom:40px;
+}
+
+.header-title{
+    font-family: var(--main-font);
+    font-size: 3em;
+    margin-bottom:20%;
+}
+.headerplace{
+    color:#ffffff;
+    display: flex;
+    width: 100%;
+    font-weight: 100;
+    justify-content: space-between;
+}
+.place-ubication-left p:nth-child(2){
+    font-weight: 700;
+}
+.data-place{
+    color:#ffffff;
+    display: flex;
+    flex-direction: row;
+}
+.data-place-info{
+    margin:0px 50px;
+}
+.data-place-info p:nth-child(1){
+    font-weight: 700;
+}
+
+
+main{
+    padding:30px 60px;
+}
+
+.place-info{
+display: flex;
+flex-direction: row;
+}
+.place-info p{
+    padding:30px 60px;
+}
+
+.place-info-distance{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+
+.place-info-time{
+    position: relative;
+    padding:30px 60px;
+}
+
+.place-info-time:after{
+    content: "";
+    position:absolute;
+    bottom:60px;
+    width: 240px;
+    height: 2px;
+    background-color:#ffffff;
+}
+.place-info-time p:nth-child(1){
+    font-size: 5em;
+}
+.place-info-time span{
+    font-size: .4em;
+}
+
+@media only screen and (max-width:769px){
+    header{      
+        width: 100%;
+        height: 100%;
+        display: flex;   
+        align-items: flex-start;
+    }
+    .header-title{
+        font-family: var(--main-font);
+        font-size: 1em;
+        margin-bottom:20%;
+    }
+    
+    main{
+        padding:30px 5px;
+    }
+    .place-info{
+        display: flex;
+        flex-direction: column;
+        }
+        .data-place{
+            padding: 15px;
+        }
+        .data-place-info{
+            margin:6px;
+        }
+        .place-info p{
+            padding:20px 3px;
+        }
+        .place-info-distance{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin:0;
+        }
+        .place-info-time{
+            padding:0px 0px;
+            justify-content: center;
+            align-items: center;
+        }
+        .place-info-time:after{
+            content:none;
+
+        }
+        .place-info-time p:nth-child(1){
+            font-size: 5em;
+        }
+        .place-info-time span{
+            font-size: .4em;
+        }
+}
+
