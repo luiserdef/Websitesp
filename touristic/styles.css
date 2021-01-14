@@ -1,19 +1,23 @@
 *{
     padding: 0px;
     margin:0px;
+    --background-color:#0c0f18;
+    --secondary-color: #192035;
+    --main-gradient:linear-gradient(to top, #00000071, #0e63c4);
+    --white-color:#ffffff;
     --main-font:'Amaranth', sans-serif;
     --secondary-font:'Open Sans', sans-serif;
-    --secondary-color: #192035;
+
 }
 body{
-    background-color: #0c0f18;
-    color:#ffffff;
+    background-color: var(--background-color);
+    color:var(--white-color);
     font-family: var(--secondary-font);
 }
 
 header{
     box-sizing: border-box;
-    background:linear-gradient(to top, #00000071, #0e63c4), url(images/india-dormida.jpg);
+    background:var(--main-gradient), url(images/india-dormida.jpg);
     background-size: 100%;
     background-repeat: none;
     width: 100%;
@@ -33,7 +37,7 @@ header{
     margin-bottom:20%;
 }
 .headerplace{
-    color:#ffffff;
+    color:var(--white-color);;
     display: flex;
     width: 100%;
     font-weight: 100;
@@ -43,7 +47,7 @@ header{
     font-weight: 700;
 }
 .data-place{
-    color:#ffffff;
+    color:var(--white-color);;
     display: flex;
     flex-direction: row;
 }
@@ -70,7 +74,7 @@ flex-direction: row;
 .place-info-distance{
     display: flex;
     justify-content: flex-end;
-    margin: 30px 5% 30px 0px;
+    margin: 70px 5% 50px 0px;
 }
 
 .place-info-time{
@@ -84,7 +88,7 @@ flex-direction: row;
     bottom:60px;
     width: 240px;
     height: 2px;
-    background-color:#ffffff;
+    background-color:var(--white-color);
 }
 .place-info-time p:nth-child(1){
     font-size: 5em;
@@ -114,6 +118,7 @@ padding-right:3%;
     justify-content: space-between;
 }
 .touristic-image{
+    position: relative;
     box-sizing: content-box;
     width: 48%;
     height: 400px;
@@ -127,6 +132,27 @@ padding-right:3%;
 .touristic-image img:hover{
     transform: scale(1.1);
 }
+.touristic-image p{
+    position: absolute;
+    bottom: 5px;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:var(--white-color);
+}
+.touristic-image:before{
+    content:"";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--secondary-color);
+    opacity: .9;
+}
+
+
+
 /* Responsive small */
 @media only screen and (max-width:769px){
     header{      
@@ -137,22 +163,19 @@ padding-right:3%;
     }
     .header-title{
         font-family: var(--main-font);
-        font-size: 1em;
-        margin-bottom:20%;
+        font-size:  1.5em;
+        margin:10% 0px;
     }
     
     main{
         padding:30px 5px;
     }
+    .headerplace{
+        display: none;
+    }
     .place-info{
         display: flex;
         flex-direction: column;
-        }
-        .data-place{
-            padding: 15px;
-        }
-        .data-place-info{
-            margin:6px;
         }
         .place-info p{
             padding:20px 3px;
