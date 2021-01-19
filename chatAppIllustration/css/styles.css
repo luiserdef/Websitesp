@@ -1,0 +1,316 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: 'Rubik', sans-serif;
+}
+body{
+    background-color: #e7e7e7;
+}
+
+.leftView{
+    width: 35%;
+    height: 560px;
+    border-radius: 0px 0px 200px 200px;
+    background:linear-gradient( to right,hsl(264, 100%, 61%),hsl(293, 100%, 63%));
+}
+.cellphone-box{
+    background-color:#ffffff;
+    box-shadow: 2px 2px 8px #666;
+    position:absolute; 
+    left:25%;
+    top:70px;
+    width: 230px;
+    height: 503px;
+    border-radius: 30px;
+}
+.cellScreen{
+    position:relative;
+    display: flex;
+    background-color:hsl(270, 20%, 96%);
+    top:10px;
+    left:10px;
+    right:10px;
+    width: 210px;
+    height: 483px;
+    border-radius: 20px;
+}
+
+.containerHeader{
+    position:absolute;
+    top:0px;
+    display: flex;
+    justify-content: center;
+    background:linear-gradient( to right,hsl(264, 100%, 61%),hsl(293, 100%, 63%));
+    width: 210px;
+    height: 70px;
+    border-radius: 20px 20px 6px 4px;
+}
+.cHeaderSound{   
+    position:absolute;
+    background-color:#ffffff;
+    top:0px;
+    height: 15px;
+    width: 115px;
+    border-radius: 0 0  10px 10px;
+}
+.headerInfo{
+    position:absolute;
+    display:flex;
+    align-items: center;
+    bottom:15px;
+    width: 90%;
+    height: 30px;
+}
+.dotInfo{
+    content: "";
+    position: absolute;
+    right: 1px;
+    top:8px;
+    z-index:1;
+    border-radius: 50%;
+    width:2px;
+    height:2px;
+    background-color: #ffffff;
+}
+#dot2{
+    top:12px;  
+}
+#dot3{
+    top:16px;  
+}
+.headerInfo img{
+    margin-left:2px;
+    border-radius: 50%;
+    width: 20px;
+    height:20px;
+    border: 2px solid azure ;
+}
+.headerInfo::before {
+    content: "";
+    display:block;
+    width: 1vmin;
+    height: 1vmin;
+    background: transparent;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform:rotate(-135deg);
+}
+
+.infoContact{
+    margin-left:10px;
+    line-height: 0.8rem;
+}
+.infoContact p:nth-child(1){
+    font-size: 0.6rem;
+    color:#ffffff;
+}
+.infoContact p:nth-child(2){
+    color:hsl(276, 100%, 81%);
+    font-size: 0.4rem;
+    font-weight: lighter;
+}
+.secondChat{
+position:absolute;
+top:75px;
+right: 5px;
+}
+.containerChatSecondary{
+    position:relative;
+    margin-top: 5px;
+    margin-left: 5px;
+    line-height: 0.8rem;
+    padding: 8px;
+    border-radius: 8px 8px 8px 3px;
+    width: 54%;
+    color: hsl(276, 55%, 52%);
+    background-color: #ECE3F4;
+    font-size: 0.5rem;
+}
+
+
+.primaryChatImg{
+    display:flex;
+    justify-content: flex-end;
+    margin: 15px 0 5px 0;
+}
+.primaryChatImg img{
+    margin-left: 8px;
+    width: 38px;
+    border-radius: 10px;    
+}
+
+.primaryChat{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.containerChatPrimary{
+    position: relative;
+    margin-bottom: 4px;
+    line-height: 0.8rem;
+    padding: 5px;
+    border-radius: 8px 8px 3px 8px;
+    width: 54%;
+    color: hsl(271, 15%, 43%);
+    background-color: hsl(0, 0%, 100%);
+    font-size: 0.5rem;
+}
+.containerChatPrimary:nth-child(2){
+    width: 35%;
+}
+
+.containerReminder{
+    position:relative;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 5px;
+    line-height: 0.8rem;
+    padding: 8px;
+    border-radius: 8px 8px 8px 3px;
+    width: 65%;
+    color: #ffffff;
+    background:linear-gradient( to right,hsl(293, 100%, 63%),hsl(264, 100%, 61%));
+    font-size: 0.5rem;
+}
+.containerReminder p{
+margin-left: 18px;
+}
+.containerReminder span{
+    position:absolute;
+    right:10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.containerReminder::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #f8f8f8;    
+    border-radius: 50%;
+}
+
+.containerSendMessage{
+    display: flex;
+    position: relative;
+    margin-top: 13px;
+    margin-left: 5px;
+    font-size: 0.5rem;
+    padding: 15px;
+    border-radius: 20px;
+    width: 80%;
+    color: #a5a5a5;
+    background-color: #ffffff;
+}
+
+.containerSendMessage:after{
+    content:"";
+    position:absolute;    
+    top: 8px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    background-color: hsl(271, 36%, 24%);
+    border-radius: 50%;
+}
+
+.containerSendMessage:before {
+    content: "";
+    position: absolute;
+    right: 18px;
+    width: 1vmin;
+    height: 1vmin;   
+    background: transparent;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transform:rotate(43deg);
+    z-index:1;
+}
+
+.textBox{
+    position: absolute;
+    color:hsl(271, 36%, 24%);    
+    text-align: center;
+    left:650px;
+    top:230px;
+    width: 30%;
+    line-height: 1.5rem;
+}
+.textBox >h1 {
+    margin-bottom: 25px;
+}
+.textBox>p{
+    color:hsl(258, 4%, 45%);
+}
+
+@media(max-width:320px){
+    .cellphone-box{
+        left:10%;
+        top:80px;
+    }
+    .leftView{
+        width:60%;
+        height: 490px;
+        border-radius: 0px 0px 200px 0px;
+    }
+    .textBox{
+        font-size: 0.9rem;
+        left:15px;
+        top:630px;
+        width: 90%;
+        line-height: 1.5rem;
+    }
+}
+@media(min-width:321px) and (max-width:480px){
+    .cellphone-box{
+        left:50px;
+        top:80px;
+    }
+    .leftView{
+        width: 50%;
+        height: 490px;
+        border-radius: 0px 0px 200px 0px;
+    }
+    .textBox{
+        font-size: 0.9rem;
+        left:15px;
+        top:630px;
+        width: 90%;
+    }
+}
+
+@media(min-width:481px) and (max-width:767px){
+    .cellphone-box{
+        left:50px;
+        top:50px;
+    }
+    .leftView{
+        width: 40%;
+        height: 490px;
+        border-radius: 0px 0px 200px 0px;
+    }
+    .textBox{
+        font-size: 0.9rem;
+        left:15px;
+        top:630px;
+        width: 90%;
+    }
+
+}
+
+@media(min-width:768px) and (max-width:1023px){
+    .leftView{
+        width: 43%;
+        height: 490px;
+        border-radius: 0px 0px 200px 0px;
+    }
+    .textBox{
+        font-size: 0.9rem;
+        left:60%;
+        top:163px;
+        width: 90;
+    } 
+}
