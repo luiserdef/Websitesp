@@ -1,240 +1,77 @@
-*{
-    padding: 0px;
-    margin:0px;
-    --background-color:#0c0f18;
-    --secondary-color: #192035;
-    --main-gradient:linear-gradient(to top, #00000071, #0e63c4);
-    --white-color:#ffffff;
-    --main-font:'Amaranth', sans-serif;
-    --secondary-font:'Open Sans', sans-serif;
-
-}
-body{
-    background-color: var(--background-color);
-    color:var(--white-color);
-    font-family: var(--secondary-font);
-}
-
-header{
-    box-sizing: border-box;
-    background:var(--main-gradient), url(images/india-dormida.jpg);
-    background-size: 100%;
-    background-repeat: none;
-    width: 100%;
-    height: 100vh;
-    display: flex;   
-    align-items: flex-end;
-}
-.header-container{
-    width: 100%;
-    padding:0px 10%;
-    margin-bottom:40px;
-}
-
-.header-title{
-    font-family: var(--main-font);
-    font-size: 3em;
-    margin-bottom:20%;
-}
-.headerplace{
-    color:var(--white-color);;
-    display: flex;
-    width: 100%;
-    font-weight: 100;
-    justify-content: space-between;
-}
-.place-ubication-left p:nth-child(2){
-    font-weight: 700;
-}
-.data-place{
-    color:var(--white-color);;
-    display: flex;
-    flex-direction: row;
-}
-.data-place-info{
-    margin:0px 50px;
-}
-.data-place-info p:nth-child(1){
-    font-weight: 700;
-}
-
-
-main{
-    padding:30px 7%;
-}
-
-.place-info{
-display: flex;
-flex-direction: row;
-}
-.place-info p:nth-child(1){
-    padding-right: 7%;
-}
-
-.place-info-distance{
-    display: flex;
-    justify-content: flex-end;
-    margin: 70px 5% 50px 0px;
-}
-
-.place-info-time{
-    position: relative;
-    padding:30px 60px;
-}
-
-.place-info-time:after{
-    content: "";
-    position:absolute;
-    bottom:60px;
-    width: 240px;
-    height: 2px;
-    background-color:var(--white-color);
-}
-.place-info-time p:nth-child(1){
-    font-size: 5em;
-}
-.place-info-time span{
-    font-size: .4em;
-}
-
-.puntos-interes{
-    padding-right: 30%;
-}
-.puntos-interes h3{
-  font-size: 2em;
-  margin-bottom: 30px;
-}
-.puntos-interes-container{
-    display: flex;
-    flex-direction: row;
-}
-.puntos-interes-container p{
-padding-right:3%;
-}
-.tourist-section{
-    padding: 5% 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.touristic-image{
-    position: relative;
-    box-sizing: content-box;
-    width: 48%;
-    height: 400px;
-    border:solid 4px var(--secondary-color);
-    overflow: hidden;
-}
-.touristic-image img{
-    height: 100%;
-        transition: transform .5s ease;
-}
-.touristic-image img:hover{
-    transform: scale(1.1);
-}
-.touristic-image p{
-    position: absolute;
-    bottom: 5px;
-    z-index: 2;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color:var(--white-color);
-}
-.touristic-image:before{
-    content:"";
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background-color: var(--secondary-color);
-    opacity: .9;
-}
-
-
-
-/* Responsive small */
-@media only screen and (max-width:769px){
-    header{      
-        width: 100%;
-        height: 100%;
-        display: flex;   
-        align-items: flex-start;
-    }
-    .header-title{
-        font-family: var(--main-font);
-        font-size:  1.5em;
-        margin:10% 0px;
-    }
-    
-    main{
-        padding:30px 5px;
-    }
-    .headerplace{
-        display: none;
-    }
-    .place-info{
-        display: flex;
-        flex-direction: column;
-        }
-        .place-info p{
-            padding:20px 3px;
-        }
-        .place-info-distance{
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin:0;
-            margin: 50px 5% 80px 0px;
-        }
-        .place-info-time{
-            padding:0px 0px;
-            justify-content: center;
-            align-items: center;
-        }
-        .place-info-time:after{
-            content:none;
-
-        }
-        .place-info-time p:nth-child(1){
-            font-size: 5em;
-        }
-        .place-info-time span{
-            font-size: .4em;
-        }
-
-        .puntos-interes{
-            padding-right: 0px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .puntos-interes h3{
-          font-size: 2em;
-          margin-bottom: 30px;
-        }
-        .puntos-interes-container{
-            display: flex;
-            flex-direction: column;
-        }
-        .puntos-interes-container p{
-        padding:10px ;
-        }
-        .tourist-section{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .touristic-image{
-            width:95%;
-            height: auto;
-            border:solid 0px;
-            overflow: hidden;
-            padding:10px 0px;
-        }
-        .touristic-image img{
-            width: 100%;
-        }
-}
-
+            * {
+                padding: 0px;
+                margin: 0px;
+                --background-color: #0c0f18;
+                --secondary-color: #192035;
+                --main-gradient: linear-gradient(to top, #00000071, #0e63c4);
+                --white-color: #ffffff;
+                --main-font: 'Amaranth', sans-serif;
+                --secondary-font: 'Open Sans', sans-serif;
+                box-sizing: border-box;
+            }
+            
+            header {
+                width: 100%;
+                height: 75vh;
+                background: no-repeat url(./images/india-dormida.jpg)#0c0f18 fixed;
+            }
+            
+            .header-container {
+                width: 100%;
+                height: 100%;
+                padding: 5em;
+                border: red solid 3px;
+                color: var(--secondary-color);
+                position: relative;
+            }
+            
+            .header-container h1 {
+                font-size: 10vw;
+            }
+            
+            .headerplace-container {
+                width: 70%;
+                position: absolute;
+                bottom: 2em;
+            }
+            
+            .headerplace {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                color: var(--white-color);
+            }
+            
+            .place-ubication-left {
+                padding: 2em 0;
+            }
+            
+            .place-ubication-right {
+                display: flex;
+            }
+            
+            @media (max-width:375px) {
+                header {
+                    height: 60vh;
+                }
+                .header-container {
+                    padding: 10px;
+                }
+                .header-container h1 {
+                    font-size: 20vw;
+                }
+                .headerplace {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    color: var(--white-color);
+                }
+                .place-ubication-left {
+                    padding: 2em 0;
+                }
+                .place-ubication-right {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
