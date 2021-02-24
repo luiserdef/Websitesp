@@ -1,0 +1,11 @@
+@import "menu.scss";
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.initial-cover {
+    background: url("../../images/image-mockups.png") center bottom no-repeat, url("../../images/bg-intro-mobile.svg") center no-repeat;
+    background-size: 350px, cover;
+    height: 305px;
+}

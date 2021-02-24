@@ -1,0 +1,11 @@
+.nav {
+    padding: 1em .5em;
+    display: flex;
+    justify-content: space-between;
+    // border: solid red 1px;
+    .menu {
+        outline: none;
+        background: none;
+        border: none;
+    }
+}
