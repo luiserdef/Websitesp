@@ -16,6 +16,7 @@
   --lime-green: hsl(136, 65%, 51%);
   --blue-cyan: rgb(43, 183, 218);
   --white: #ffffff;
+  --very-light-green: hsl(220, 16%, 96%);
   --font-size: 16px;
 }
 
@@ -35,6 +36,7 @@
 .header-invite {
   text-align: center;
   font-family: var(--primary-font);
+  padding-bottom: 4em;
 }
 .header-invite h1 {
   color: var(--dark-color-blue);
@@ -54,12 +56,13 @@
   background-image: linear-gradient(to right, var(--lime-green), var(--blue-cyan));
   border: none;
   border-radius: 50px;
-  padding: 1em 2.5em;
+  padding: 0.8em 2.2em;
   color: var(--white);
 }
 
 .section-info {
-  padding: 0 1em;
+  background-color: var(--very-light-green);
+  padding: 0.2em 1em;
   font-family: var(--primary-font);
 }
 .section-info .sec-info {
@@ -70,14 +73,23 @@
   align-items: center;
 }
 .section-info .sec-info h2 {
-  font-size: 1.5em;
+  margin: 0.5em;
+  font-size: 2em;
+  font-weight: 300;
+}
+.section-info .sec-info h2 span {
+  display: block;
+  font-size: 1.2em;
+}
+.section-info .sec-info h3 {
+  font-size: 1.3em;
   font-weight: 400;
   color: var(--dark-color-blue);
-  margin: 1em 0;
+  margin: 0.5em 0;
 }
 .section-info .sec-info p {
   font-size: 0.95em;
-  line-height: 1.5em;
+  line-height: 1.7em;
   font-weight: 300;
   color: var(--gray-blue);
 }
