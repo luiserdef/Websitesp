@@ -1,12 +1,12 @@
-@import "menu.scss";
 :root {
     --primary-font: "Public Sans", sans-serif;
     --dark-color-blue: hsl(233, 26%, 24%);
     --gray-blue: hsl(233, 8%, 62%);
     --lime-green: hsl(136, 65%, 51%);
     --blue-cyan: rgb(43, 183, 218);
+    --Light-Grayish: hsl(0, 0%, 98%);
+    --very-light-gray: hsl(0, 0%, 92%);
     --white: #ffffff;
-    --very-light-green: hsl(220, 16%, 96%);
     --font-size: 16px;
 }
 
@@ -16,6 +16,9 @@
     font-size: var(--font-size);
 }
 
+@import "menu.scss";
+@import "articles.scss";
+@import "footer.scss";
 .initial-cover {
     background: url("../../images/image-mockups.png") center bottom no-repeat, url("../../images/bg-intro-mobile.svg") center no-repeat;
     background-size: 350px, cover;
@@ -39,19 +42,21 @@
         font-family: var(--secondary-font);
         font-weight: 300;
     }
-    .bt_request {
-        margin-top: 2em;
-        outline: none;
-        background-image: linear-gradient( to right, var(--lime-green), var(--blue-cyan));
-        border: none;
-        border-radius: 50px;
-        padding: .8em 2.2em;
-        color: var(--white);
-    }
+}
+
+.bt_request {
+    margin-top: 2em;
+    outline: none;
+    background-image: linear-gradient( to right, var(--lime-green), var(--blue-cyan));
+    border: none;
+    border-radius: 50px;
+    padding: .8em 2.2em;
+    color: var(--white);
+    cursor: pointer;
 }
 
 .section-info {
-    background-color: var(--very-light-green);
+    background-color: var(--very-light-gray);
     padding: .2em 1em;
     font-family: var(--primary-font);
     .sec-info {

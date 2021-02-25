@@ -1,0 +1,53 @@
+@mixin icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+}
+
+footer {
+    background-color: var(--dark-color-blue);
+    border: solid red 1px;
+    padding: 2em 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--primary-font);
+    img {
+        margin-bottom: 1.5em;
+    }
+    .social {
+        .icon {
+            &__facebook {
+                @include icon;
+                background: url("../../images/icon-facebook.svg") no-repeat center;
+            }
+            &__youtube {
+                @include icon;
+                background: url("../../images/icon-youtube.svg") no-repeat center;
+            }
+            &__twitter {
+                @include icon;
+                background: url("../../images/icon-twitter.svg") no-repeat center;
+            }
+            &__pinterest {
+                @include icon;
+                background: url("../../images/icon-pinterest.svg") no-repeat center;
+            }
+            &__instagram {
+                @include icon;
+                background: url("../../images/icon-instagram.svg") no-repeat center;
+            }
+        }
+    }
+    .footer-link {
+        margin: .5em 0;
+        font-size: .9em;
+        text-decoration: none;
+        font-weight: 300;
+        color: var(--white);
+    }
+    .copyright {
+        margin: 1em 0;
+        color: var(--gray-blue);
+    }
+}
