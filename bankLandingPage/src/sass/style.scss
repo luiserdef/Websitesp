@@ -44,6 +44,17 @@
     }
 }
 
+@media only screen and (min-width:1440px) {
+    .header-invite {
+        display: grid;
+        grid-template-areas: "description image";
+        grid-template-columns: 1fr 1fr;
+    }
+    .initial-cover {
+        grid-area: image;
+    }
+}
+
 .bt_request {
     margin-top: 2em;
     outline: none;
