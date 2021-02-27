@@ -43,4 +43,38 @@
             }
         }
     }
+    @media only screen and (min-width:768px) {
+        display: flex;
+        flex-direction: column;
+        padding: 3em calc(var(--padding-content-width) - 5em);
+        .latest-art-title h2 {
+            font-size: 2.7em;
+            text-align: center;
+        }
+        .card-article-container {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            .card-article {
+                width: 17.5em;
+            }
+        }
+    }
+    @media only screen and (min-width:1440px) {
+        display: flex;
+        flex-direction: column;
+        padding: 3em var(--padding-content-width);
+        .latest-art-title h2 {
+            font-size: 2.7em;
+            text-align: left;
+        }
+        .card-article-container {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(4, 1fr);
+            .card-article {
+                width: 17.5em;
+            }
+        }
+    }
 }

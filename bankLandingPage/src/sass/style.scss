@@ -6,6 +6,7 @@
     --blue-cyan: rgb(43, 183, 218);
     --Light-Grayish: hsl(0, 0%, 98%);
     --very-light-gray: hsl(0, 0%, 92%);
+    --padding-content-width: 8em;
     --white: #ffffff;
     --font-size: 16px;
 }
@@ -46,12 +47,41 @@
 
 @media only screen and (min-width:1440px) {
     .header-invite {
+        padding-bottom: 0em;
         display: grid;
         grid-template-areas: "description image";
         grid-template-columns: 1fr 1fr;
+        background: url("../../images/bg-intro-desktop.svg") top -270px right -500px no-repeat;
+        background-size: 90%;
+        z-index: 2;
+        // outline: solid red 1px;
+        h1 {
+            color: var(--dark-color-blue);
+            font-size: 3.2em;
+        }
+        p {
+            font-size: 1.2em;
+        }
     }
     .initial-cover {
         grid-area: image;
+        padding: 7em 0;
+        position: absolute;
+        right: 0px;
+        height: 440px;
+        width: 700px;
+        background: url("../../images/image-mockups.png") top -100px right -110px no-repeat;
+        background-size: 650px;
+        // outline: solid red 1px;
+    }
+    .description-header {
+        // outline: solid red 1px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start;
+        grid-area: description;
+        padding: 10em 3em 7em var(--padding-content-width);
     }
 }
 
@@ -97,5 +127,53 @@
             font-weight: 300;
             color: var(--gray-blue);
         }
+    }
+    @media only screen and(min-width:768px) {
+        display: flex;
+        flex-direction: column;
+        padding: 3em calc(var(--padding-content-width) - 5em);
+        .sec-info {
+            // outline: solid red 1px;
+            text-align: left;
+            font-size: 1.1em;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 0 1em 0 0;
+            h2 {
+                margin: 0;
+                font-weight: 300;
+                span {
+                    display: inline-flex;
+                }
+            }
+            h3 {
+                margin: .5em 0;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            // display: flex;
+            // justify-content: space-between;
+            // justify-content: left;
+        }
+    }
+    @media only screen and (min-width:1440px) {
+        padding: 3em var(--padding-content-width);
+        .info-container {
+            grid-template-columns: repeat(4, 1fr);
+            // display: flex;
+            // justify-content: space-between;
+            // justify-content: left;
+        }
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    .choose {
+        padding: 0 50em;
     }
 }

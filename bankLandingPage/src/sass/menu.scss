@@ -24,7 +24,7 @@
     
     @media only screen and (min-width:1440px) {
         .nav {
-            padding: 1em 5em;
+            padding: 1em var(--padding-content-width);
             align-items: center;
             .menu {
                 display: none;

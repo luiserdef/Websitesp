@@ -6,6 +6,7 @@
   --blue-cyan: rgb(43, 183, 218);
   --Light-Grayish: hsl(0, 0%, 98%);
   --very-light-gray: hsl(0, 0%, 92%);
+  --padding-content-width: 8em;
   --white: #ffffff;
   --font-size: 16px;
 }
@@ -41,7 +42,7 @@
 
 @media only screen and (min-width: 1440px) {
   .nav {
-    padding: 1em 5em;
+    padding: 1em var(--padding-content-width);
     align-items: center;
   }
   .nav .menu {
@@ -103,6 +104,44 @@
   font-weight: 300;
   font-size: 0.9em;
   color: var(--gray-blue);
+}
+@media only screen and (min-width: 768px) {
+  .article-section {
+    display: flex;
+    flex-direction: column;
+    padding: 3em calc(var(--padding-content-width) - 5em);
+  }
+  .article-section .latest-art-title h2 {
+    font-size: 2.7em;
+    text-align: center;
+  }
+  .article-section .card-article-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .article-section .card-article-container .card-article {
+    width: 17.5em;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .article-section {
+    display: flex;
+    flex-direction: column;
+    padding: 3em var(--padding-content-width);
+  }
+  .article-section .latest-art-title h2 {
+    font-size: 2.7em;
+    text-align: left;
+  }
+  .article-section .card-article-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .article-section .card-article-container .card-article {
+    width: 17.5em;
+  }
 }
 
 footer {
@@ -186,13 +225,40 @@ footer .copyright {
 
 @media only screen and (min-width: 1440px) {
   .header-invite {
+    padding-bottom: 0em;
     display: grid;
     grid-template-areas: "description image";
     grid-template-columns: 1fr 1fr;
+    background: url("../../images/bg-intro-desktop.svg") top -270px right -500px no-repeat;
+    background-size: 90%;
+    z-index: 2;
+  }
+  .header-invite h1 {
+    color: var(--dark-color-blue);
+    font-size: 3.2em;
+  }
+  .header-invite p {
+    font-size: 1.2em;
   }
 
   .initial-cover {
     grid-area: image;
+    padding: 7em 0;
+    position: absolute;
+    right: 0px;
+    height: 440px;
+    width: 700px;
+    background: url("../../images/image-mockups.png") top -100px right -110px no-repeat;
+    background-size: 650px;
+  }
+
+  .description-header {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    grid-area: description;
+    padding: 10em 3em 7em var(--padding-content-width);
   }
 }
 .bt_request {
@@ -238,6 +304,51 @@ footer .copyright {
   line-height: 1.7em;
   font-weight: 300;
   color: var(--gray-blue);
+}
+@media only screen and (min-width: 768px) {
+  .section-info {
+    display: flex;
+    flex-direction: column;
+    padding: 3em calc(var(--padding-content-width) - 5em);
+  }
+  .section-info .sec-info {
+    text-align: left;
+    font-size: 1.1em;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 1em 0 0;
+  }
+  .section-info .sec-info h2 {
+    margin: 0;
+    font-weight: 300;
+  }
+  .section-info .sec-info h2 span {
+    display: inline-flex;
+  }
+  .section-info .sec-info h3 {
+    margin: 0.5em 0;
+  }
+  .section-info .sec-info p {
+    font-size: 1em;
+  }
+  .section-info .info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .section-info {
+    padding: 3em var(--padding-content-width);
+  }
+  .section-info .info-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .choose {
+    padding: 0 50em;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
