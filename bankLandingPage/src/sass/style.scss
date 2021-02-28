@@ -45,16 +45,15 @@
     }
 }
 
-@media only screen and (min-width:1440px) {
+@media only screen and (min-width:1024px) {
     .header-invite {
         padding-bottom: 0em;
         display: grid;
         grid-template-areas: "description image";
         grid-template-columns: 1fr 1fr;
         background: url("../../images/bg-intro-desktop.svg") top -270px right -500px no-repeat;
-        background-size: 90%;
+        background-size: 85%;
         z-index: 2;
-        // outline: solid red 1px;
         h1 {
             color: var(--dark-color-blue);
             font-size: 3.2em;
@@ -72,10 +71,8 @@
         width: 700px;
         background: url("../../images/image-mockups.png") top -100px right -110px no-repeat;
         background-size: 650px;
-        // outline: solid red 1px;
     }
     .description-header {
-        // outline: solid red 1px;
         display: flex;
         flex-direction: column;
         text-align: left;
@@ -86,6 +83,7 @@
 }
 
 .bt_request {
+    position: relative;
     margin-top: 2em;
     outline: none;
     background-image: linear-gradient( to right, var(--lime-green), var(--blue-cyan));
@@ -94,6 +92,18 @@
     padding: .8em 2.2em;
     color: var(--white);
     cursor: pointer;
+    &:hover {
+        &:before {
+            content: "";
+            left: 0;
+            top: 0;
+            border-radius: 50px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff60;
+        }
+    }
 }
 
 .section-info {
@@ -133,7 +143,6 @@
         flex-direction: column;
         padding: 3em calc(var(--padding-content-width) - 5em);
         .sec-info {
-            // outline: solid red 1px;
             text-align: left;
             font-size: 1.1em;
             align-items: flex-start;
@@ -156,23 +165,17 @@
         .info-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            // display: flex;
-            // justify-content: space-between;
-            // justify-content: left;
         }
     }
-    @media only screen and (min-width:1440px) {
+    @media only screen and (min-width:1024px) {
         padding: 3em var(--padding-content-width);
         .info-container {
             grid-template-columns: repeat(4, 1fr);
-            // display: flex;
-            // justify-content: space-between;
-            // justify-content: left;
         }
     }
 }
 
-@media only screen and (min-width:1440px) {
+@media only screen and (min-width:1024px) {
     .choose {
         padding: 0 50em;
     }

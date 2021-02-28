@@ -2,11 +2,11 @@
     width: 40px;
     height: 40px;
     display: inline-flex;
+    background-color: red;
 }
 
 footer {
     background-color: var(--dark-color-blue);
-    border: solid red 1px;
     padding: 2em 0;
     display: flex;
     align-items: center;
@@ -16,6 +16,7 @@ footer {
         margin-bottom: 1.5em;
     }
     .social {
+        a {}
         .icon {
             &__facebook {
                 @include icon;
@@ -41,13 +42,56 @@ footer {
     }
     .footer-link {
         margin: .5em 0;
-        font-size: .9em;
+        font-size: 1.2em;
         text-decoration: none;
         font-weight: 300;
         color: var(--white);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
     .copyright {
         margin: 1em 0;
         color: var(--gray-blue);
+    }
+    @media only screen and(min-width:1024px) {
+        padding: 3em var(--padding-content-width);
+        img {
+            width: 12em;
+        }
+        .footers-links-containers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 300px 1fr 300px;
+        grid-template-areas: "logo links requestbt ""social links copyright";
+        .footer-logo {
+            grid-area: logo;
+            justify-self: start;
+        }
+        .social {
+            grid-area: social;
+            justify-self: start;
+        }
+        .footers-links-containers {
+            grid-area: links;
+            justify-items: left;
+            column-gap: 5em;
+            a {
+                &:hover {
+                    color: var(--lime-green);
+                }
+            }
+        }
+        .footer-bt {
+            grid-area: requestbt;
+            justify-self: end;
+        }
+        .copyright {
+            grid-area: copyright;
+            justify-self: end;
+        }
     }
 }

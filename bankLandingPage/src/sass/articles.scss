@@ -29,13 +29,15 @@
                 color: var(--gray-blue);
                 font-size: .8em;
             }
-            h3 {
-                padding: .5em 0;
-                font-weight: 400;
+            a {
+                text-decoration: none;
+                padding: 3em 0;
+                font-weight: 700;
                 font-size: 1.1em;
                 color: var(--dark-color-blue);
             }
             p {
+                padding: .5em 0;
                 line-height: 1.3em;
                 font-weight: 300;
                 font-size: .9em;
@@ -55,25 +57,31 @@
             display: grid;
             justify-items: center;
             grid-template-columns: repeat(2, 1fr);
+            column-gap: 10px;
             .card-article {
                 width: 17.5em;
+                a {
+                    &:hover {
+                        cursor: pointer;
+                        color: var(--lime-green);
+                    }
+                }
             }
         }
     }
-    @media only screen and (min-width:1440px) {
+    @media only screen and (min-width:1024px) {
         display: flex;
         flex-direction: column;
         padding: 3em var(--padding-content-width);
         .latest-art-title h2 {
-            font-size: 2.7em;
+            font-size: 2.5em;
             text-align: left;
         }
         .card-article-container {
-            display: grid;
-            justify-items: center;
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
+            justify-content: space-between;
             .card-article {
-                width: 17.5em;
+                width: 17em;
             }
         }
     }
