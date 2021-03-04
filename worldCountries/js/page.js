@@ -157,7 +157,7 @@ function detailsPage(countryCode) {
     }
     pageDetail.innerHTML = `
         <button class="backButton ${updateDarkLightBox()}">Back</button>
-        <div class="countryCard singlePage">
+        <div class="countryCard singlePage ">
             <div class="card-img">
                 <img src="${dataCountry[0].flag}" alt="">
             </div>
