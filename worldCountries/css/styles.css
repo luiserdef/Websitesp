@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --DarkBlue-DarkMode: hsl(209, 23%, 22%);
+    --VeryDarkBlue-Background: hsl(207, 26%, 17%);
+    --VeryDarkBlue-LightModeText: hsl(200, 15%, 8%);
+    --DarkGray-LightModeInput: hsl(0, 0%, 52%);
+    --VeryLightGray-LightBackground: hsl(0, 0%, 98%);
+    --White-DarkModeText-LightMode: hsl(0, 0%, 100%);
+}
+
+
+/***************
+DarkMode and Light Mode 
+****************/
+
+.darkMode-main {
+    background-color: var(--VeryDarkBlue-Background);
+    color: var(--White-DarkModeText-LightMode);
+}
+
+.lightMode-main {
+    background-color: var(--VeryLightGray-LightBackground);
+    color: var(--VeryDarkBlue-LightModeText);
+}
+
+.lightMode-box {
+    background-color: var(--VeryLightGray-LightBackground);
+    box-shadow: 0 2px 10px #dadada;
+}
+
+.darkMode-box {
+    background-color: var(--DarkBlue-DarkMode);
+    color: var(--White-DarkModeText-LightMode);
+}
+
+.darkOption:before,
+.lightOption:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 1px;
+    width: 18px;
+    height: 18px;
+}
+
+.darkOption:before {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(216deg) brightness(103%) contrast(103%);
+    background: url("/img/moon-dark-mode.svg");
+}
+
+.lightOption:before {
+    background: url("/img/moon-light-mode.svg");
+}
+
+.darkLightModeOption:hover {
+    cursor: pointer;
+}
+
+
+/***************
+DarkMode and Light Mode END
+****************/
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+}
+
+.wrapper {
+    padding: 1.5em;
+}
+
+.navMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navMain h1 {
+    font-size: 1.2em;
+}
+
+.navMain span {
+    position: relative;
+}
+
+
+/* Main*/
+
+main {
+    position: relative;
+}
+
+.inputSearchBox {
+    position: relative;
+}
+
+.inputSearchBox .inputCountry {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    font-weight: 300;
+    outline: none;
+    border: none;
+    padding: 1em 0 1em 4em;
+    margin-bottom: 3em;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.inputSearchBox .inputCountry::placeholder {
+    color: var(--DarkGray-LightModeInput);
+}
+
+.inputSearchBox .searchIcon {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    background: url("/img/search-icon.svg");
+}
+
+.filterRegion {
+    padding: .9em 5.5em .9em 1.5em;
+    border: none;
+    outline: none;
+    font-size: .9em;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.filterRegion:hover {
+    cursor: pointer;
+}
+
+.container-cardCountry {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px;
+    padding: 0 1.5em;
+    margin: 2em 0;
+}
+
+.countryCard {
+    border-radius: 10px;
+}
+
+.countryCardSelection:hover {
+    cursor: pointer;
+}
+
+.countryCard .card-img {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.countryCard .card-img img {
+    width: 100%;
+    object-fit: fill;
+}
+
+.countryCard .card-body {
+    padding: 2em;
+    line-height: 2em;
+}
+
+.card-body h2 {
+    font-size: 1.3em;
+    padding-bottom: .5em;
+}
+
+.card-body p {
+    font-weight: 300;
+}
+
+
+/* Country page */
+
+.pageCountry {
+    position: absolute;
+    left: 30vw;
+}
+
+.pageCountry .block {
+    display: none;
+}
+
+.backButton {
+    padding: .5em 2em;
+    margin-bottom: 2em;
+    outline: none;
+    border: solid .5px var(--VeryDarkBlue-Background);
+}
+
+.backButton:hover {
+    cursor: pointer;
+}
+
+.pageCountry .countryCard {
+    border-radius: 0px;
+}
+
+.pageCountry .card-body {
+    padding: 2em 0;
+    line-height: 2em;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    row-gap: 2em;
+}
+
+.pageCountry .card-body h3 {
+    margin-bottom: 1em;
+}
+
+.borderCountries {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 1fr);
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.borderCountries p {
+    padding: 0 1em;
+}
+
+.toLeft,
+.toRight {
+    animation-timing-function: ease;
+    animation-duration: 300ms;
+}
+
+.toLeft {
+    left: 0;
+    animation-name: toLeft;
+}
+
+.toRight {
+    left: calc(100vw + 10px);
+    animation-name: toRight;
+}
+
+@keyframes toLeft {
+    from {
+        left: calc(100vw + 10px);
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes toRight {
+    from {
+        left: 0;
+    }
+    to {
+        left: calc(100vw + 10px);
+    }
+}
