@@ -3,6 +3,7 @@ const countryData = document.getElementById("countryData");
 const regionSelection = document.getElementById("filterRegionOptions");
 const inputSearch = document.getElementById("inputSearch")
 const pageDetail = document.querySelector(".pageCountry")
+const mainSelector = document.querySelector("main")
 let countryCard;
 
 
@@ -16,16 +17,26 @@ inputSearch.addEventListener("input", () => { searchPaint(resultData, "inputSear
 
 
 function updateRegion() {
-
+    countryData.innerHTML = ""
     let region = regionSelection.value || "americas"
     fetch(`https://restcountries.eu/rest/v2/region/${region}`)
-        .then(response => response.json())
-        .then(dataRegion => {
-            resultData = dataRegion
-            searchPaint(resultData, "regionOption")
+        .then(response => {
+            if (response.ok) {
+                countryData.classList.add("loading")
+                return response.json()
+            } else {
+                return Promise.reject("check")
+            }
         })
+        .then(dataRegion => {
+            console.log("enter")
+            resultData = dataRegion
+            countryData.classList.remove("loading")
+            searchPaint(resultData, "regionOption")
+        }).catch(error => searchPaint({}, "noFetch"))
 }
 
+//
 function searchPaint(resultData = {}, mode = "regionOption") {
     countryData.innerHTML = ""
     if (mode === "inputSearch") {
@@ -34,13 +45,19 @@ function searchPaint(resultData = {}, mode = "regionOption") {
         resultData.filter(countryVal => {
             if (countryVal.name.toLowerCase().includes(country.toLowerCase())) {
                 countryData.innerHTML += createCard(countryVal)
+
             }
         })
+
+
     }
     if (mode === "regionOption") {
         resultData.forEach(countryVal => {
             countryData.innerHTML += createCard(countryVal)
         })
+    }
+    if (mode === "noFetch") {
+        countryData.textContent = `No Results`
     }
 }
 
@@ -140,11 +157,11 @@ function detailsPage(countryCode) {
     }
     pageDetail.innerHTML = `
         <button class="backButton ${updateDarkLightBox()}">Back</button>
-        <div class="countryCard">
+        <div class="countryCard singlePage">
             <div class="card-img">
                 <img src="${dataCountry[0].flag}" alt="">
             </div>
-            <div class="card-body">
+            <div class="card-body singlePage-body">
                 <span>
                     <h2>${dataCountry[0].name}</h2>
                     <p><strong>Native Name: </strong>${dataCountry[0].nativeName}</p>
@@ -171,9 +188,8 @@ function detailsPage(countryCode) {
 function showMainPage() {
     document.getElementById("main-content").style.display = "block"
     pageDetail.classList.add("toRight")
-        //  pageDetail.style.left = "calc(100vw + 10px)"
     pageDetail.classList.remove("toLeft")
     setTimeout(() => {
         pageDetail.style.display = "none"
-    }, 500)
+    }, 200)
 }
