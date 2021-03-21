@@ -1,0 +1,193 @@
+:root{
+    /* primary */
+    --SoftCyanFullSliderBar: hsl(174, 77%, 80%);
+    --StrongCyanSliderBackround: hsl(174, 86%, 45%);
+    --LightGrayishRedDiscountBackground: hsl(14, 92%, 95%);
+    --LightRedDiscountText: hsl(15, 100%, 70%);
+    --PaleBlueCTAText: hsl(226, 100%, 87%);
+
+    /* Secondary */
+    --WhitePricingComponentBackground: hsl (0, 0%, 100%);
+    --VeryPaleBlueMainBackground: hsl(230, 100%, 99%);
+    --LightGrayishBlueEmptySliderBar: hsl(224, 65%, 95%);
+    --LightGrayishBlueToggleBackground: hsl(223, 50%, 87%);
+    --GrayishBlueText: hsl(225, 20%, 60%);
+    --DarkDesaturatedBlue: hsl(227, 35%, 25%);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Manrope', sans-serif;
+    /* background-color:blueviolet ;     */
+    color:var(--GrayishBlueText);
+    background-color: rgb(255, 235, 235);
+}
+p,li{
+    font-size: .7rem;
+    font-weight: 600;
+}
+
+header{
+    text-align: center;
+}
+.bg-header{
+    position: absolute;
+    z-index: -1;
+    min-height: 80vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* border:solid red 1px; */
+    background:url("images/pattern-circles.svg")center top,url("images/bg-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 120px,800px;
+    background-position: 50% 25px,0 0;
+}
+.spacing{
+    padding:3em 2em 3em 2em;
+}
+header h1{
+    font-size: 1.1em;
+    font-weight: 800;
+    margin-bottom: .5em;
+    color:var(--DarkDesaturatedBlue);
+}
+
+.container{
+    padding: 1em 1em;    
+}
+
+.pageviewCard{
+    margin: 0 1em;    
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px #aaaaaa;
+    border-radius: 10px;    
+    background-color:var(--VeryPaleBlueMainBackground);
+}
+
+.head-pageviews{
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    row-gap: 2em;
+    text-align: center;
+}
+
+.pageviewCard h2{
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: 600;
+    color:var(--GrayishBlueText);
+}
+.slider{
+    position: relative;
+    width: 100%;
+    height:.5em;
+    border-radius: 50px;
+    background-color: var(--StrongCyanSliderBackround);
+}
+.value-month span{
+    font-size: 2em;
+    font-weight: 800;
+    margin-right: 2px;
+    color:var(--DarkDesaturatedBlue);
+}
+
+.slider-circle{
+    position: relative;
+    top:-15px;
+    width: 35px;
+    padding:8px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--StrongCyanSliderBackround);
+    box-shadow: 0 5px 20px var(--StrongCyanSliderBackround);
+}
+.billing{
+    display: grid;
+    grid-template-columns: auto  auto auto;
+    column-gap: 10px;
+}
+.billing .billing-slider{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 40px;
+    height: 15px;
+    padding: 2px;
+    border-radius: 50px;
+    background-color: rgb(150, 150, 150);
+}
+
+.billing p span:nth-child(1){
+    font-weight: 600 ;
+    border-radius: 50px;
+    margin-left: 5px;
+    padding: 0 7px;
+    color:var(--LightRedDiscountText);
+    background-color: rgb(255, 221, 221);
+}
+
+.billing p span:nth-child(2){
+    display: none;
+}
+
+.check-monthly{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--VeryPaleBlueMainBackground);
+}
+.checks{
+    position: relative;
+    padding: 1em 1em;    
+    width: 100%;
+    border-top: solid var(--LightGrayishBlueToggleBackground) 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.checks ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.checks li{    
+    position: relative;
+    list-style: none;
+    margin-bottom: 5px;
+}
+.checks li:last-of-type{   
+    margin-bottom: 0px;
+}
+.checks small:before{
+    content:"";
+    position: absolute;
+    left: -20px;
+    top:5px;
+    width:10px;
+    height:10px;
+    background-image: url("images/icon-check.svg");
+    background-size: 10px;
+    background-repeat: no-repeat;
+}
+
+.trial-button{
+    font-weight: 600;
+    margin-top: 2em;
+    font-size: .7em;
+    text-decoration: none;
+    color:var(--PaleBlueCTAText);
+    background-color:var(--DarkDesaturatedBlue);
+    border-radius: 50px;
+    padding: .7em 3em;
+}
+
