@@ -24,7 +24,7 @@ body{
     font-family: 'Manrope', sans-serif;
     /* background-color:blueviolet ;     */
     color:var(--GrayishBlueText);
-    background-color: rgb(255, 235, 235);
+    background-color: rgb(221, 157, 157);
 }
 p,li{
     font-size: .7rem;
@@ -87,8 +87,47 @@ header h1{
     width: 100%;
     height:.5em;
     border-radius: 50px;
-    background-color: var(--StrongCyanSliderBackround);
 }
+.range-slider{
+    width: 100%;    
+    height: 10px;
+    appearance: none;
+    outline: none;
+    border-radius: 50px;
+    background: var(--StrongCyanSliderBackround);
+}
+.range-slider::-webkit-slider-thumb:hover{
+    cursor:pointer;
+}
+
+.range-slider::-webkit-slider-thumb{
+    -webkit-appearance:none ;
+    appearance: none;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    background: url("./images/icon-slider.svg") no-repeat center;
+    background-color: var(--StrongCyanSliderBackround);
+    padding:8px;
+    border-radius: 50%;    
+    box-shadow: 0 5px 20px var(--StrongCyanSliderBackround);
+}
+/* .slider-circle{
+    position: absolute;
+    background: url("./images/icon-slider.svg") no-repeat center;
+    top:-15px;
+    left:0%;
+    width: 35px;
+    padding:8px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--StrongCyanSliderBackround);
+    box-shadow: 0 5px 20px var(--StrongCyanSliderBackround);
+} */
+.slider-circle{
+    cursor: pointer;
+}
+
 .value-month span{
     font-size: 2em;
     font-weight: 800;
@@ -96,17 +135,7 @@ header h1{
     color:var(--DarkDesaturatedBlue);
 }
 
-.slider-circle{
-    position: relative;
-    top:-15px;
-    width: 35px;
-    padding:8px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: var(--StrongCyanSliderBackround);
-    box-shadow: 0 5px 20px var(--StrongCyanSliderBackround);
-}
-.billing{
+.billing{    
     display: grid;
     grid-template-columns: auto  auto auto;
     column-gap: 10px;
@@ -126,15 +155,15 @@ header h1{
 .billing p span:nth-child(1){
     font-weight: 600 ;
     border-radius: 50px;
-    margin-left: 5px;
-    padding: 0 7px;
+    padding: 0 10px;
     color:var(--LightRedDiscountText);
     background-color: rgb(255, 221, 221);
 }
-
-.billing p span:nth-child(2){
+.billing p span .discount-span{
+     padding: 0;
     display: none;
 }
+
 
 .check-monthly{
     width: 12px;
@@ -191,3 +220,90 @@ header h1{
     padding: .7em 3em;
 }
 
+@media (min-width:992px) {
+    body{
+        font-size: 20px;
+    }
+   .bg-header{
+        position: absolute;
+        z-index: -1;
+        min-height: 80vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        /* border:solid red 1px; */
+        background:url("images/pattern-circles.svg")center top,url("images/bg-pattern.svg") top;
+        background-repeat: no-repeat;
+        background-size: 120px,100%;
+        background-position: 50% 25px,0 0;
+    } 
+
+    .pageviewCard-container{
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .pageviewCard{
+        margin: 0;
+        min-width: 450px;
+    }
+
+    .pageviewCard h2{
+        grid-area: title-pageview;
+    }
+
+    .value-month {
+        grid-area: month-total;
+    }
+
+    .billing{    
+        grid-area: billing;
+    }
+
+    .slider{
+        grid-area: slider;
+    }
+
+    .head-pageviews{
+        display: grid;
+        grid-template-columns: repeat(50%);
+        row-gap: 3em;
+        text-align: center;
+        grid-template-areas:
+        "title-pageview month-total"
+        "slider slider"
+        " billing billing" ;
+    }
+
+    .billing{
+        justify-content: end;
+    }
+    .billing p span .discount-span{
+       display: inline-block;
+   }
+   .billing p span:nth-child(1){
+    margin-left: 5px;
+}
+    .checks{
+        position: relative;
+        padding: 1em 2.5em;    
+        width: 100%;
+        border-top: solid var(--LightGrayishBlueToggleBackground) 2px;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .checks ul{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;  
+    }
+
+    .trial-button{
+        margin-top: 0em;
+    }
+}
