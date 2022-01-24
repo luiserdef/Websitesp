@@ -34,6 +34,14 @@ p,li{
 header{
     text-align: center;
 }
+header p {
+   font-size: .8em;
+}
+
+header p span{
+    display: inline-block;
+}
+
 .bg-header{
     position: absolute;
     z-index: -1;
@@ -220,6 +228,10 @@ header h1{
     padding: .7em 3em;
 }
 
+.trial-button:hover{
+transform: scale(1.1);
+}
+
 @media (min-width:992px) {
     body{
         font-size: 20px;
@@ -238,19 +250,6 @@ header h1{
         background-position: 50% 25px,0 0;
     } 
 
-    .pageviewCard-container{
-        margin: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .pageviewCard{
-        margin: 0;
-        min-width: 450px;
-    }
-
     .pageviewCard h2{
         grid-area: title-pageview;
     }
@@ -259,9 +258,6 @@ header h1{
         grid-area: month-total;
     }
 
-    .billing{    
-        grid-area: billing;
-    }
 
     .slider{
         grid-area: slider;
@@ -281,9 +277,7 @@ header h1{
     .billing{
         justify-content: end;
     }
-    .billing p span .discount-span{
-       display: inline-block;
-   }
+
    .billing p span:nth-child(1){
     margin-left: 5px;
 }
@@ -305,5 +299,46 @@ header h1{
 
     .trial-button{
         margin-top: 0em;
+    }
+}
+
+@media (min-width:660px){
+    .billing p span .discount-span{
+        margin-left: 5px;
+        display: inline-block;
+    }
+
+    .pageviewCard-container{
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .pageviewCard{
+        margin: 0;
+        min-width: 450px;
+    }
+
+    .checks{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    .trial-button{
+        margin-top: 0em;
+    }
+    .checks{
+        position: relative;
+        padding: 1em 1em;    
+        width: 100%;
+        border-top: solid var(--LightGrayishBlueToggleBackground) 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;  
     }
 }

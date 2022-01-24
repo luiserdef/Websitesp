@@ -1,6 +1,7 @@
 let slider = document.querySelector(".slider-circle");
 let sliderArea = document.querySelector(".slider");
 let sliderRange = document.querySelector(".range-slider");
+let changeValueMonth= document.querySelector("#value-total");
 
 let rangeValue=sliderRange.value
 
@@ -17,6 +18,6 @@ sliderRange.addEventListener("input",sliderMove)
 sliderRange.addEventListener("mouseup",()=>{isMouseDown=false})
 
 function sliderMove(e){
+    changeValueMonth.innerHTML="$"+sliderRange.value
     console.log(this.value)
-
 }
