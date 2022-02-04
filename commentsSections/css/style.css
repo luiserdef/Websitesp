@@ -1,0 +1,21 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+:root{
+padding:0px ;
+    border: solid red 1px;
+    --background-color:hsl(223, 19%, 93%);
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+.comments-sections{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 1em;
+    background-color: #ffffff;
+    padding:2em ;
+}
