@@ -4,6 +4,7 @@
 *{    
     padding:0px ;
     margin:0px;
+    /* border:solid red 1px; */
 }
 
 :root{
@@ -11,6 +12,8 @@
     --rubik-font: 'IBM Plex Sans Thai Looped', sans-serif;
     --font-paragraph-light-gray:hsl(206, 7%, 54%);
     --font-gray-dark:hsl(0, 2%, 21%);
+    --actions-button-color:hsl(223, 19%, 93%);
+    --primary-action-color:hsl(212, 99%, 31%);
     
 }
 
@@ -55,4 +58,56 @@ body{
 
 .comment-card p{
 padding:.8em 0px;
+}
+
+.actions-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-action-color);
+}
+.rate-action{
+    width: 80px;
+    height: 35px;    
+    font-weight: 700;
+    display: flex;   
+    align-items: center;
+}
+.rate-action p{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+    padding:0px;
+    background-color: var(--actions-button-color);
+}
+
+.rate-action button{    
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+.rate-action button:nth-child(1){
+    background:url("../images/icon-plus.svg") no-repeat center;
+    background-color: var(--actions-button-color);
+    border-radius: 10px 0px 0px 10px;
+}
+.rate-action button:nth-child(3){
+    background:url("../images/icon-minus.svg") no-repeat center;
+    background-color: var(--actions-button-color);
+    border-radius: 0px 10px 10px 0px;
+}
+
+.reply-comment{
+    position: relative;
+    font-weight: 700;
+}
+.reply-comment:before{
+    position: absolute;
+    content: "";
+    left: -20px;
+    bottom: -15px;
+    background: url("../images/icon-reply.svg") no-repeat;
+    width: 30px;
+    height: 30px;
 }
