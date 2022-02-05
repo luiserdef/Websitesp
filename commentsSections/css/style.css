@@ -1,21 +1,58 @@
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-:root{
-padding:0px ;
-    border: solid red 1px;
-    --background-color:hsl(223, 19%, 93%);
+*{    
+    padding:0px ;
+    margin:0px;
 }
 
-body{
+:root{
+    --background-color:hsl(222, 11%, 57%);
+    --rubik-font: 'IBM Plex Sans Thai Looped', sans-serif;
+    --font-paragraph-light-gray:hsl(206, 7%, 54%);
+    --font-gray-dark:hsl(0, 2%, 21%);
+    
+}
+
+body{    
     background-color: var(--background-color);
+    font-family: var(--rubik-font);
+    font-weight: 400;    
+    font-size: .8em;
 }
 
 .comments-sections{
+    justify-content: center;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    row-gap: 1em;
+    grid-template-rows: repeat(1fr);
+    row-gap: .8em;
+    padding:1em  1em;
+}
+
+.comment-card{
+    padding: .8em;
+    font-size: 1.2em;
     background-color: #ffffff;
-    padding:2em ;
+    border-radius: 5px;
+    color:var(--font-paragraph-light-gray);
+}
+
+.header-card{
+    display: flex;
+    font-size: .9em;
+    gap:10px;
+    align-items: center;
+}
+#avatar_user{
+    height: 30px;
+}
+
+#user_nickname{
+    color:var(--font-gray-dark);
+    font-weight:700;
+    text-decoration: none;
+}
+
+.comment-card p{
+padding:.8em 0px;
 }

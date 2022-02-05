@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive comments section</title>
@@ -15,36 +18,25 @@
 <div class="comments-sections">
   <div class="comment-card">
     <div class="header-card">
-      <img class="avatar_user" src="images/avatars/image-amyrobson.png" alt="">
+      <img id="avatar_user" src="images/avatars/image-amyrobson.png" alt="">
       <a href="#" id="user_nickname">amyrobson</a>
       <p id="time_comment"> 1 month ago</p>
     </div>
-    <div class="comments-card">
-        <p>Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at varios breakpoints works really well.</p>
-    </div>
+        <p id="comentary_content">Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at varios breakpoints works really well.</p>
     <div class="actions_card">
-      <p></p>
     </div>
   </div>
   <div class="comment-card">
     <div class="header-card">
-      <img class="avatar_user" src="images/avatars/image-amyrobson.png" alt="">
-      <a href="#" id="user_nickname">amyrobson</a>
+      <img class="avatar_user" src="images/avatars/image-maxblagun.png" alt="">
+      <a href="#" id="user_nickname">maxblagun</a>
       <p id="time_comment"> 1 month ago</p>
     </div>
-    <div class="comments-card">
         <p>Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at varios breakpoints works really well.</p>
-    </div>
     <div class="actions_card">
-      <p></p>
     </div>
   </div>
 </div>
-  <!-- Pull dynamic content from the data.json file -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+
 </body>
 </html>
