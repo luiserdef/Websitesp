@@ -19,7 +19,7 @@ inputSearch.addEventListener("input", () => { searchPaint(resultData, "inputSear
 function updateRegion() {
     countryData.innerHTML = ""
     let region = regionSelection.value || "americas"
-    fetch(`https://restcountries.eu/rest/v2/region/${region}`)
+    fetch(` https://restcountries.com/v2/region/${region}`)
         .then(response => {
             if (response.ok) {
                 countryData.classList.add("loading")

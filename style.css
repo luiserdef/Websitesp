@@ -29,7 +29,26 @@ img{
     display: flex;
     flex-direction:column;
 }
+.hero{
+    display: flex;
+    align-items: center;
+}
+.hero h1{
+    font-size: 3em;
+    animation-name:movem;
+    animation-duration:2s;
+    animation-iteration-count:infinite;
+}
 
+@keyframes movem{
+    0%{
+        transform:translateY(0px)
+    }50%{
+        transform:translateY(-2px)
+    }100%{
+        transform:translateY(0px)
+    }
+}
 main{
     padding: 2em 0;
 }
@@ -74,10 +93,17 @@ main{
 .card-content a:hover{
     background-color: #2d38a3;
 }
-
+@media (min-width:768px){
+    .hero h1{
+        font-size: 5em;
+    }
+    .card-content{
+        grid-template-columns: auto auto;
+    }
+}
 @media (min-width:1024px){
     .card-content{
-        display:grid;
         grid-template-columns: auto auto auto;
     }
 }
+
