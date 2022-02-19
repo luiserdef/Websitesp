@@ -1,10 +1,10 @@
-# Frontend Mentor - REST Countries API with color theme switcher
+# REST Countries API with color theme switcher
 
-## Preview! 
+## Preview
 
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
 
 
-This responsive web page was created using only HTML, CSS and Javascript. Whithout libraries or frameworks.
+Esta pagina responsive fue creada con HTML, CSS y Javascript vanilla
 
-Rest API: https://restcountries.eu
+Rest API usada:  https://restcountries.com
