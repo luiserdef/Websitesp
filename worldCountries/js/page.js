@@ -6,20 +6,20 @@ const pageDetail = document.querySelector(".pageCountry")
 const mainSelector = document.querySelector("main")
 let countryCard;
 
-
 let resultData = {}
+let positionPage=0;
 updateRegion()
-
 
 regionSelection.addEventListener("change", updateRegion)
 bt_darkLightMode.addEventListener("click", darkLightMode)
 inputSearch.addEventListener("input", () => { searchPaint(resultData, "inputSearch") })
 
 
-function updateRegion() {
+ function updateRegion() {
     countryData.innerHTML = ""
     let region = regionSelection.value || "americas"
-    fetch(` https://restcountries.com/v2/region/${region}`)
+
+     fetch(`https://restcountries.com/v2/region/${region}`)
         .then(response => {
             if (response.ok) {
                 countryData.classList.add("loading")
@@ -36,26 +36,25 @@ function updateRegion() {
         }).catch(error => searchPaint({}, "noFetch"))
 }
 
-//
 function searchPaint(resultData = {}, mode = "regionOption") {
     countryData.innerHTML = ""
+
     if (mode === "inputSearch") {
         let country = inputSearch.value
 
         resultData.filter(countryVal => {
             if (countryVal.name.toLowerCase().includes(country.toLowerCase())) {
                 countryData.innerHTML += createCard(countryVal)
-
             }
         })
-
-
     }
+
     if (mode === "regionOption") {
         resultData.forEach(countryVal => {
             countryData.innerHTML += createCard(countryVal)
         })
     }
+
     if (mode === "noFetch") {
         countryData.textContent = `No Results`
     }
@@ -73,8 +72,7 @@ function createCard(data) {
             <p><strong>Region: </strong>${data.region}</p>
             <p><strong>Capital: </strong>${data.capital}</p> 
         </div>
-    </div>                          
-    `
+    </div>`                          
 }
 
 
@@ -82,20 +80,21 @@ function darkLightMode() {
     if (document.querySelector(".darkMode-main")) {
         document.querySelector(".darkLightModeOption").textContent = "Light Mode"
         document.querySelector(".searchIcon").style.removeProperty("filter")
-        let mainSelection = document.querySelectorAll(".darkMode-main")
-        for (let i = 0; i < mainSelection.length; i++) {
 
+        let mainSelection = document.querySelectorAll(".darkMode-main")        
+        let boxSelection = document.querySelectorAll(".darkMode-box")
+
+        for (let i = 0; i < mainSelection.length; i++) {
             mainSelection[i].classList.add("lightMode-main")
             mainSelection[i].classList.remove("darkMode-main")
         }
 
-        //
-        let boxSelection = document.querySelectorAll(".darkMode-box")
+
         for (let i = 0; i < boxSelection.length; i++) {
             boxSelection[i].classList.add("lightMode-box")
             boxSelection[i].classList.remove("darkMode-box")
         }
-        //
+
         bt_darkLightMode.classList.remove("darkOption")
         bt_darkLightMode.classList.add("lightOption")
 
@@ -108,13 +107,13 @@ function darkLightMode() {
             mainSelection[i].classList.remove("lightMode-main")
         }
 
-        //
+
         let boxSelection = document.querySelectorAll(".lightMode-box")
         for (let i = 0; i < boxSelection.length; i++) {
             boxSelection[i].classList.add("darkMode-box")
             boxSelection[i].classList.remove("lightMode-box")
         }
-        //
+
         bt_darkLightMode.classList.remove("lightOption")
         bt_darkLightMode.classList.add("darkOption")
 
@@ -129,32 +128,45 @@ function updateDarkLightBox() {
 //page Description Country
 
 function detailsPage(countryCode) {
+    
+    positionPage=document.documentElement.scrollTop
     pageDetail.classList.remove("toRight")
     pageDetail.classList.add("toLeft")
     pageDetail.style.display = "block"
     document.getElementById("main-content").style.display = "none"
+
     let dataCountry = resultData.filter(element => element.alpha3Code.includes(countryCode))
-
-
     let countryBorders = ""
     let countryCurrencies = ""
     let countrylanguages = ""
-    dataCountry[0]["borders"].forEach(element => {
-        countryBorders += `
-            <p class="${updateDarkLightBox()}">${element}</p> `
-    })
-    dataCountry[0]["currencies"].forEach(element => {
-        countryCurrencies += element.code + ", "
-    })
+
+    if(dataCountry[0]["borders"]){
+        dataCountry[0]["borders"].forEach(element => {
+            countryBorders += `<p class="${updateDarkLightBox()}">${element}</p> `
+        }) 
+    }
+
+    if(dataCountry[0]["currencies"]){
+        dataCountry[0]["currencies"].forEach(element => {
+            countryCurrencies += element.code + ", "
+        })  
+     }
+
+
     if (countryCurrencies[countryCurrencies.length - 1] == " ") {
         countryCurrencies = countryCurrencies.substring(0, countryCurrencies.length - 2)
     }
-    dataCountry[0]["languages"].forEach(element => {
-        countrylanguages += element.name + ", "
-    })
+
+    if(dataCountry[0]["languages"]){
+        dataCountry[0]["languages"].forEach(element => {
+            countrylanguages += element.name + ", "
+        })
+     }
+
     if (countrylanguages[countrylanguages.length - 1] == " ") {
         countrylanguages = countrylanguages.substring(0, countrylanguages.length - 2)
     }
+
     pageDetail.innerHTML = `
         <button class="backButton ${updateDarkLightBox()}">Back</button>
         <div class="countryCard singlePage ">
@@ -190,6 +202,7 @@ function showMainPage() {
     pageDetail.classList.add("toRight")
     pageDetail.classList.remove("toLeft")
     setTimeout(() => {
-        pageDetail.style.display = "none"
+        pageDetail.style.display = "none"      
     }, 200)
+    window.scroll(0,positionPage)
 }
